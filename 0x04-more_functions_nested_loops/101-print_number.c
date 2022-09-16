@@ -1,14 +1,23 @@
 #include <stdio.h>
-#include <unistd.h>
+#include "main.h"
 
 /**
- * main - Entry point
- *
- * Return: Always 1 (Success)
- */
-int main(void)
+* print_number - prints a number
+* @n: the number to print
+*/
+
+void print_number(int n)
 {
-		write(2,
-	"and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
-			return (1);
+	unsigned int num = n;
+
+	if (n < 0)
+	{
+		putchar('-');
+		num = -num;
+	}
+	if (num > 9)
+	{
+		print_number(num / 10);
+	}
+	putchar(num % 10 + '0');
 }
