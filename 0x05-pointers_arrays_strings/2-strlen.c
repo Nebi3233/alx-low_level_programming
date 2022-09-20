@@ -1,18 +1,17 @@
 #include "main.h"
 
 /**
- * _puts - check the code.
- * @str: validate the character
- * Return: Always 0.
+ *_strlen - returns the length of a string
+ * @s: string
+ *Return: returns length as integer;
  */
 
-void _puts(char *str)
+int _strlen(char *s)
 {
-	int i;
+	int len = 0;
 
-	for (i = 0; str[i] != '\0' ; i++)
-	{
-		_putchar(str[i]);
-	}
-	_putchar('\n');
+	while (*(s + len) != '\0')
+		len++;
+
+	return (len);
 }
